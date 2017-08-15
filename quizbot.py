@@ -44,30 +44,29 @@ def Message():
             "text": "아직 베타버젼입니다. 잠시만 기다려주시면 감사합니다!" +"\n"+"1. 공지 사항 2. 일정 3. 연락처 4. 문의 및 건의"
             }
         }
-    elif u"일정" or "2" in content:
+    elif u"일정" in content:
         dataSend = {
             "message": {
             "text": "다가오는 일정 :2017년 8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔 "
             }
         }
-    elif u"공지" or "1" in content:
+    elif u"공지" in content:
         dataSend = {
             "message": {
             "text": "8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔에서 해단식을 할 예정입니다. 많은 참석 부탁드립니다."
             }
         }
-    elif u"연락" or "3" in content:
+    elif u"연락" in content:
         dataSend = {
             "message": {
             "text": "유서환"+"\n"+"010-9397-6940"+"\n"+"seohwan91@gmail.com"
             }
         }
-    elif u"문의" or "건의" or "4" in content:
-        dataSend = {
-            "message": {
-            "text": "010-9397-6940"+"\n"+"seohwan91@gmail.com"
-            }
-        }
+    elif content == u"유서환3188":
+        tmp= posts.find_all({'title': '1'})
+        for idx in tmp:
+            print(idx[content])
+
     else:
         dataSend = {
             "message": {
