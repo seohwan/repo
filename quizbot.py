@@ -4,6 +4,7 @@
 # quizbot.py
 #nohup 사용
 #“ps -ef | grep 쉘스크립트파일명” 명령으로 데몬형식으로 실행
+#nohup python3 quizbot.py &
 #---------------------------------
 import os
 from pymongo import MongoClient
@@ -33,7 +34,7 @@ def Message():
     if content == u"시작하기":
         dataSend = {
             "message": {
-            "text": "1. 공지 사항 2. 일정 3. 연락처 4. 문의 및 건의"
+            "text": "1. 공지 사항 2. 일정 3. 연락처 "
             }
         }
 
@@ -49,17 +50,6 @@ def Message():
             "text": "다가오는 일정 :2017년 8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔 "
             }
         }
-    elif u"문의" or "건의" or "4" in content:
-        dataReceive = request.get_json()
-        content = dataReceive['content']
-        post_data = {
-        'title': '1',
-        'content': 'PyMongo is fun, you guys',
-        'author': 'Scott'
-        }
-        post_data['content']=content
-        posts.insert_one(post_data)
-
     elif u"공지" or "1" in content:
         dataSend = {
             "message": {
@@ -84,6 +74,13 @@ def Message():
             "text": "형식에 맞게 입력해주시면 감사합니다."
             }
         }
+
+    post_data = {
+    'title': '1',
+    'content': 'PyMongo is fun, you guys'
+    }
+    post_data['content']=content
+    posts.insert_one(post_data)
     return jsonify(dataSend)
 
 if __name__ == "__main__":
