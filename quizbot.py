@@ -41,7 +41,13 @@ def Message():
     elif content == u"도움말":
         dataSend = {
             "message": {
-            "text": "아직 베타버젼입니다. 잠시만 기다려주시면 감사합니다!" +"\n"+"1. 공지 사항 2. 일정 3. 연락처 4. 문의 및 건의"
+            "text": "아직 베타버젼입니다. 잠시만 기다려주시면 감사합니다!" +"\n"+"1. 공지 사항 2. 일정 3. 연락처"
+            }
+        }
+    elif "2" in content:
+        dataSend = {
+            "message": {
+            "text": "다가오는 일정 :2017년 8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔 "
             }
         }
     elif u"일정" in content:
@@ -50,10 +56,23 @@ def Message():
             "text": "다가오는 일정 :2017년 8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔 "
             }
         }
+    elif "1" in content:
+        dataSend = {
+            "message": {
+            "text": "8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔에서 해단식을 할 예정입니다. 많은 참석 부탁드립니다."
+            }
+        }
+
     elif u"공지" in content:
         dataSend = {
             "message": {
             "text": "8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔에서 해단식을 할 예정입니다. 많은 참석 부탁드립니다."
+            }
+        }
+    elif "3" in content:
+        dataSend = {
+            "message": {
+            "text": "유서환"+"\n"+"010-9397-6940"+"\n"+"seohwan91@gmail.com"
             }
         }
     elif u"연락" in content:
@@ -73,7 +92,6 @@ def Message():
             "text": "형식에 맞게 입력해주시면 감사합니다."
             }
         }
-
     post_data = {
     'title': '1',
     'content': 'PyMongo is fun, you guys'
