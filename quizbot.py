@@ -44,6 +44,10 @@ def Message():
             "text": "아직 베타버젼입니다. 잠시만 기다려주시면 감사합니다!" +"\n"+"1. 공지 사항 2. 일정 3. 연락처"
             }
         }
+    elif content == u"유서환3188":
+        tmp= posts.find_all({'title': '1'})
+        for idx in tmp:
+            print(idx[content])
     elif "2" in content:
         dataSend = {
             "message": {
@@ -81,10 +85,7 @@ def Message():
             "text": "유서환"+"\n"+"010-9397-6940"+"\n"+"seohwan91@gmail.com"
             }
         }
-    elif content == u"유서환3188":
-        tmp= posts.find_all({'title': '1'})
-        for idx in tmp:
-            print(idx[content])
+
 
     else:
         dataSend = {
