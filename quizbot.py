@@ -51,26 +51,28 @@ def Message():
     elif "2" in content:
         dataSend = {
             "message": {
-            "text": "다가오는 일정 :2017년 8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔 "
+            "text": "다가오는 일정 : 가을 캠프(준비중입니다) "
             }
         }
     elif u"일정" in content:
         dataSend = {
             "message": {
-            "text": "다가오는 일정 :2017년 8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔 "
+            "text": "다가오는 일정 : 가을 캠프(준비중입니다) "
             }
         }
     elif "1" in content:
         dataSend = {
             "message": {
-            "text": "8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔에서 해단식을 할 예정입니다. 많은 참석 부탁드립니다."
+            "text": "CISV 가을 캠프를 준비하려고 하는데 캠프 날짜 관련하여 JB 선후배님의 의견을 듣고 싶어 설문 조사를 합니다. 아래 링크로 접속하여 선호하시는 날짜 선택해주시면 감사합니다. ( 중복 선택도 가능합니다 )"
++"http://bit.ly/2weuGVq"
             }
         }
 
     elif u"공지" in content:
         dataSend = {
             "message": {
-            "text": "8월 27일 오후 5시 코엑스 인터콘티넨탈 호텔에서 해단식을 할 예정입니다. 많은 참석 부탁드립니다."
+            "text": "text": "CISV 가을 캠프를 준비하려고 하는데 캠프 날짜 관련하여 JB 선후배님의 의견을 듣고 싶어 설문 조사를 합니다. 아래 링크로 접속하여 선호하시는 날짜 선택해주시면 감사합니다. ( 중복 선택도 가능합니다 )"
++"http://bit.ly/2weuGVq"
             }
         }
     elif "3" in content:
